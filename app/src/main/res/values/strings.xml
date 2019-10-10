@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LiveDataModel</string>
+    <string name="apiKey">e2e2cae1c5b9256b4dc97f8c430165dc</string>
+
+    <string name="title_activity_movie">Title</string>
+    <string name="appbar_scrolling_view_behavior2" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+</resources>
