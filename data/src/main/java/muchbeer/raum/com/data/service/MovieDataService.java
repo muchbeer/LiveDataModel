@@ -1,6 +1,7 @@
-package muchbeer.raum.com.livedatamodel.service;
+package muchbeer.raum.com.data.service;
 
-import muchbeer.raum.com.livedatamodel.model.MovieDbResponse;
+
+import muchbeer.raum.com.data.model.MovieDbResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

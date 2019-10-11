@@ -1,4 +1,4 @@
-package muchbeer.raum.com.livedatamodel.service;
+package muchbeer.raum.com.data.service;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

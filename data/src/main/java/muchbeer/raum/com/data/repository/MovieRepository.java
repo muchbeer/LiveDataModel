@@ -1,4 +1,4 @@
-package muchbeer.raum.com.livedatamodel.model;
+package muchbeer.raum.com.data.repository;
 
 import android.app.Application;
 
@@ -7,12 +7,15 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.ArrayList;
 import java.util.List;
 
-import muchbeer.raum.com.livedatamodel.R;
-import muchbeer.raum.com.livedatamodel.service.MovieDataService;
-import muchbeer.raum.com.livedatamodel.service.RetrofitInstance;
+import muchbeer.raum.com.data.R;
+import muchbeer.raum.com.data.model.Movie;
+import muchbeer.raum.com.data.model.MovieDbResponse;
+import muchbeer.raum.com.data.service.MovieDataService;
+import muchbeer.raum.com.data.service.RetrofitInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 public class MovieRepository {
         public MovieDataService movieDataService;
@@ -23,9 +26,6 @@ public class MovieRepository {
 //Does not add the PageList implementation that is why we remove the MovieDataService
     public MovieRepository(Application application) {
        this.application = application;
-
-
-
     }
 
 

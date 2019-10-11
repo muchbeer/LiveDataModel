@@ -7,7 +7,7 @@
         
         <variable
             name="movie"
-            type="muchbeer.raum.com.livedatamodel.model.Movie" />
+            type="muchbeer.raum.com.data.model.Movie" />
     </data>
 
 

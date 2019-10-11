@@ -11,9 +11,10 @@ import android.util.Log;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
+import muchbeer.raum.com.data.model.Movie;
 import muchbeer.raum.com.livedatamodel.R;
 import muchbeer.raum.com.livedatamodel.databinding.ActivityMovieBinding;
-import muchbeer.raum.com.livedatamodel.model.Movie;
+
 
 public class MovieActivity extends AppCompatActivity {
 

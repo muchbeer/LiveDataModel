@@ -2,6 +2,7 @@ package muchbeer.raum.com.livedatamodel.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import muchbeer.raum.com.data.model.Movie;
 import muchbeer.raum.com.livedatamodel.R;
 import muchbeer.raum.com.livedatamodel.databinding.ActivityMovieBinding;
 import muchbeer.raum.com.livedatamodel.databinding.MovieListItemBinding;
-import muchbeer.raum.com.livedatamodel.model.Movie;
+
 import muchbeer.raum.com.livedatamodel.view.MovieActivity;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {

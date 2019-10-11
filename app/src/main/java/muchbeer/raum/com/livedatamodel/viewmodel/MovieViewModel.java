@@ -10,21 +10,15 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import muchbeer.raum.com.data.model.Movie;
-import muchbeer.raum.com.data.repository.MovieRepository;
 import muchbeer.raum.com.data.repository.MovieRepositoryImpl;
 import muchbeer.raum.com.data.repository.MovieRepositoryInterface;
 
+public class MovieViewModel extends AndroidViewModel {
 
-public class MainActivityViewModel extends AndroidViewModel {
-
-
-    private static final String TAG = MainActivityViewModel.class.getSimpleName();
+    private static final String TAG = MovieViewModel.class.getSimpleName();
     private MovieRepositoryInterface mMovieRepositoryInterface;
 
-   // private MovieRepository movieRepository;
-
-
-    public LiveData<List<Movie>> getAllMovieLocalData() {
+    public LiveData<List<Movie>> getMovieDataModel() {
         return mMovieRepositoryInterface.getMovieData();
     }
 
@@ -32,10 +26,10 @@ public class MainActivityViewModel extends AndroidViewModel {
         return mMovieRepositoryInterface.getErrorStream();
     }
 
-    public MainActivityViewModel(@NonNull Application application) {
+
+    public MovieViewModel(@NonNull Application application) {
         super(application);
 
-       // movieRepository=new MovieRepository(application);
         mMovieRepositoryInterface = MovieRepositoryImpl.create(application);
     }
 
@@ -45,10 +39,10 @@ public class MainActivityViewModel extends AndroidViewModel {
         super.onCleared();
     }
 
+
     public void fetchData() {
         mMovieRepositoryInterface.fetchData();
     }
-  /*  public LiveData<List<Movie>> getAllMoview() {
-        return  movieRepository.getMutableLiveData();
-    }*/
+
+
 }
