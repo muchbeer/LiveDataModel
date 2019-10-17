@@ -1,6 +1,7 @@
 package muchbeer.raum.com.data.repository;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.PagedList;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface MovieRepositoryInterface {
 
     LiveData<List<Movie>> getMovieData();
     LiveData<String> getErrorStream();
-   // LiveData<Double> getTotalMarketCapStream();
+    // LiveData<Double> getTotalMarketCapStream();
     void fetchData();
 
 

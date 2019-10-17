@@ -12,10 +12,15 @@ import java.util.List;
 import muchbeer.raum.com.data.model.Movie;
 
 @Dao
-public interface MovieDao {
-
+public interface MovieDaoPaging {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertMovies(List<Movie> movies);
+
+    @Query("SELECT * FROM movietbl")
+    List<Movie> getMovies();
+
+    @Query("DELETE FROM movietbl")
+    abstract void deleteAllMovies();
 
     @Query("SELECT * FROM movietbl")
     LiveData<List<Movie>> getAllMoviesLive();
@@ -23,15 +28,7 @@ public interface MovieDao {
     @Query("SELECT * FROM movietbl")
     List<Movie> getAllMovieLocal();
 
-    @Query("SELECT * FROM movietbl LIMIT :limit")
-    LiveData<List<Movie>>getMovie(int limit);
-
-    @Query("SELECT * FROM movietbl WHERE title=:title")
-    LiveData<Movie>getSearchedMovie(String title);
-
-
     // object, with position-based loading under the hood.
     @Query("SELECT * FROM movietbl")
     DataSource.Factory<Integer, Movie> getAllMovieOnPaging();
-
 }

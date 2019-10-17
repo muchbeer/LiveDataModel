@@ -23,7 +23,7 @@
         </activity>
 
 
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.MainActivityPaging">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,9 +5,11 @@ import android.os.Parcelable;
 import android.widget.ImageView;
 
 
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -96,7 +98,19 @@ public class Movie extends BaseObservable implements Parcelable {
     @ColumnInfo(name="releasedate")
     private String releaseDate;
 
+//paging calling DIFF CALLBACK
+    // use for ordering the items in view
+    public static DiffUtil.ItemCallback<Movie> DIFF_CALLBACK = new DiffUtil.ItemCallback<Movie>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
 
+        @Override
+        public boolean areContentsTheSame(@NonNull Movie oldItem, @NonNull Movie newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
+    };
 
     public final static Creator<Movie> CREATOR = new Creator<Movie>() {
 

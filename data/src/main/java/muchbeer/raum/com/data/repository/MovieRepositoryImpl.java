@@ -7,6 +7,8 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Observer;
+import androidx.paging.PagedList;
+import androidx.room.RoomDatabase;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -15,6 +17,7 @@ import java.util.concurrent.Executors;
 import muchbeer.raum.com.data.model.Movie;
 import muchbeer.raum.com.data.repository.datasource.LocalDataSource;
 import muchbeer.raum.com.data.repository.datasource.RemoteDataSource;
+
 
 public class MovieRepositoryImpl implements MovieRepositoryInterface {
 
@@ -68,12 +71,12 @@ public class MovieRepositoryImpl implements MovieRepositoryInterface {
             }
         });
 
-  mMovieErrorMerger.addSource(this.mLocalDataSource.getErrorStream(), new Observer<String>() {
-              @Override
-              public void onChanged(String erorString) {
-                  mMovieErrorMerger.setValue(erorString);
-              }
-          });
+        mMovieErrorMerger.addSource(this.mLocalDataSource.getErrorStream(), new Observer<String>() {
+            @Override
+            public void onChanged(String erorString) {
+                mMovieErrorMerger.setValue(erorString);
+            }
+        });
 
     }
 
